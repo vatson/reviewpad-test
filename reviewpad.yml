@@ -1,5 +1,5 @@
 workflows:
   - name: Negative feedback
     run:
-      if: $comments() == ['-2']
+      if: $comments() == ["-2"]
       then: $failCheckStatus("Someone give you negative feedback")

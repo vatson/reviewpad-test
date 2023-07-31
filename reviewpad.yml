@@ -1,5 +1,5 @@
 workflows:
   - name: Negative feedback
     run:
-      if: $comments() == ["-2"]
-      then: $failCheckStatus("Someone give you negative feedback")
+      - if: '$any($comments(), ($el: String => $matchString(".*-2.*", $el)))' 
+        then: $failCheckStatus("Someone give you negative feedback")
